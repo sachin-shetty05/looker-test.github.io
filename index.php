@@ -15,10 +15,13 @@ $json_external_user_id = json_encode("test_user");
 $json_first_name = json_encode("John");
 $json_last_name = json_encode("Doe");
 $json_permissions = json_encode( array ( "see_user_dashboards", "see_lookml_dashboards", "access_data", "see_looks" ) );
-$json_models = json_encode(array());
-$json_group_ids = json_encode(array());  // just some example group ids
-$json_external_group_id = json_encode("");
-$json_user_attributes = json_encode( array () );  // just some example attributes
+$json_models = json_encode(array("covid_cci"));
+$group_ids = new stdClass();
+$json_group_ids = json_encode($group_ids);  // just some example group ids
+$external_group_ids = new stdClass();
+$json_external_group_id = json_encode($external_group_ids);
+$user_attr = new stdClass();
+$json_user_attributes = json_encode($user_attr);  // just some example attributes
 // NOTE: accessfilters must be present and be a json hash. If you don't need access filters then the php
 // way to make an empty json hash as an alternative to the below seems to be:
 $accessfilters = new stdClass();
