@@ -1,0 +1,73 @@
+<html>
+
+<head>
+<title>Contact Center Insights</title>
+<head>
+<style>
+
+/* Style the tab */
+.tab, #looker {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="tab">
+  	<button class="tablinks" onclick="changeIframeLink(40)">Summary Dashboard</button>
+    	<button class="tablinks" onclick="changeIframeLink(64)">Content Analysis</button>
+    	<button class="tablinks" onclick="changeIframeLink(113)">Agent Performance</button>
+    	<button class="tablinks" onclick="changeIframeLink(120)">Agent Estimation</button>
+    	<button class="tablinks" onclick="changeIframeLink(102)">Executive Dashboard</button>
+    </div>	
+
+    
+    <div>
+        <iframe id="looker" src="" height="90%" width="100%" title="Dashboard_Iframe"></iframe>
+    </div>
+
+    <script>
+        function changeIframeLink(id) {
+            var url = "http://localhost:5000/looker-redirect" + "/" + id;
+            document.getElementById("looker").src = url;
+        }
+    </script>
+
+</body>
+
+</html>
